@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+.header {
+  border-color: red;
+  border-width: 10px;
+  border-style: solid;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {grid-area: title;}
+
+.categories {grid-area: categories;}
+.coding {grid-area: coding; text-align: right;}
+.football{grid-area: football; text-align: center;}
+.cooking {grid-area: cooking; text-align: left;}
+.allArticles {grid-area: allArticles; text-align: center;}
+
+.articlesNav{
+  display: grid;
+  border-color: orange;
+  border-width: 10px;  
+  border-style: solid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "categories categories categories"
+  "coding football cooking"
+  "allArticles allArticles allArticles"
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.articlesPage{
+  border-color: purple;
+  border-width: 10px;  
+  border-style: solid;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.articlesCard{
+  border-color: green;
+  border-width: 10px;  
+  border-style: solid;
+}
+
+.title {grid-area: title;}
+.author {grid-area: author;}
+.date {grid-area: date;}
+.comments {grid-area: comments;}
+.votes {grid-area: votes;}
+
+.articlesList {
+  display: grid;
+  border-color: blue;
+  border-width: 10px;
+  border-style: solid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "title title votes"
+  "author date votes"
+  "comments comments votes"
+  ;
+}
+
+.articlePage {
+  border-color: purple;
+  border-width: 10px;  
+  border-style: solid;
+}
+
+.articleNav{
+  border-color: orange;
+  border-width: 10px;  
+  border-style: solid;
+}
+
+.articleBody{
+  border-color: green;
+  border-width: 10px;  
+  border-style: solid;
+}
+
+.commentCard {
+  display: grid;
+  border-color: blue;
+  border-width: 10px;
+  border-style: solid;
+}
+
+.articleTitle {grid-area: articleTitle; text-align: left;}
+.articleUsername {grid-area: articleUsername;}
+.articleDate {grid-area: articleDate; text-align: center;}
+.articleBodyText{grid-area: articleBodyText;}
+.upvoteArticle {grid-area: upvoteArticle;}
+.downvoteArticle {grid-area: downvoteArticle;}
+.articleVoteCount {grid-area: articleVoteCount; text-align: center;}
+.articleVoteBlock {grid-area: articleVoteBlock; text-align: center;}
+
+.articleBody {
+  border-color: yellow;
+  border-width: 10px;
+  border-style: solid;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "articleTitle  articleTitle articleTitle"
+  "articleUsername  articleDate   articleDate"
+  "articleBodyText articleBodyText articleBodyText"
+  "articleVoteBlock articleVoteBlock articleVoteBlock"
+
+}
+
+.articleVoteBlock{
+  border-color: greenyellow;
+  border-width: 10px;
+  border-style: solid;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-template-areas:
+  "upvoteArticle articleVoteCount downvoteArticle";
 }
 
-.App-link {
-  color: #61dafb;
-}
+.commentUsername {grid-area: commentUsername; text-align: left;}
+.commentBody {grid-area: commentBody;}
+.commentDate {grid-area: commentDate; text-align: center;}
+.commentUpvote {grid-area: commentUpvote; text-align: left;}
+.commentDownvote {grid-area: commentDownvote; text-align: right;}
+.commentCount {grid-area: commentCount; text-align: center;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.commentsList {
+  border-color: hotpink;
+  border-width: 10px;
+  border-style: solid;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "commentUsername  commentDate commentDate"
+  "commentBody  commentBody   commentUpvote"
+  "commentBody commentBody commentCount"
+  "commentBody commentBody commentDownvote"
 }

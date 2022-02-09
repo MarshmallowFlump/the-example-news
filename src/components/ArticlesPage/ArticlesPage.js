@@ -1,8 +1,12 @@
 import React from 'react';
+import ArticlesCard from './ArticlesCard';
+import ArticlesNav from './ArticlesNav';
 
 const ArticlesPage = () => {
     return (
-        <div>
+        <div className='articlesPage'>
+            <ArticlesNav />
+            <ArticlesCard />
             
         </div>
     );

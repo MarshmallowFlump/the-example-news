@@ -2,8 +2,10 @@ import React from 'react';
 
 const ArticleNav = () => {
     return (
-        <div>
-            
+        <div className='articleNav'>
+            <button className='backButton'>
+                <h1>Back</h1>
+            </button>
         </div>
     );
 };
