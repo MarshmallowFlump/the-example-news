@@ -16,7 +16,7 @@ const ArticleBody = () => {
                 1 January 2022
             </h1>
 
-            <body className='articleBodyText'>
+            <p className='articleBodyText'>
                 Cupcake ipsum dolor sit amet wafer gummi bears dessert jujubes. Jelly beans halvah muffin cupcake gummi bears pie chupa chups chocolate cake donut. Bonbon tart toffee chocolate sweet roll candy canes. Danish pastry gummi bears cotton candy gummi bears halvah carrot cake gingerbread.
 
                 Apple pie cotton candy soufflé marzipan toffee. Wafer biscuit marshmallow cookie gummies macaroon macaroon. Gummies cookie chocolate cake toffee biscuit tootsie roll brownie.
@@ -26,7 +26,7 @@ const ArticleBody = () => {
                 Shortbread bear claw tart chocolate cupcake ice cream tootsie roll cheesecake. Brownie pastry brownie topping gingerbread chupa chups cake pudding candy canes. Tiramisu pastry biscuit marzipan shortbread donut.
 
                 Jelly icing dessert powder dessert gummi bears oat cake. Jelly jelly marzipan cupcake wafer chupa chups caramels candy canes. Candy marshmallow gummi bears candy dessert cotton candy tart marshmallow. Chocolate cake ice cream jelly-o topping chocolate bar carrot cake.
-            </body>
+            </p>
         <ArticleVoteBlock />
         </div>
     );

@@ -1,39 +1,44 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import { getTopics } from '../../utils/api';
 
 const ArticlesNav = () => {
+
+    const [ topics, setTopics ] = useState([]);
+
+    useEffect(() => {
+        getTopics()
+        .then((res) => {
+            setTopics(res);
+        });
+    }, []);   
+  // console.log(topics)
     return (
-        <div className='articlesNav'>
-            <h1 className='categories'>Categories</h1>
-            <h2 className='coding'>
-                <button className='codingButton'>
-                    Coding
+     
+        <main className='articlesNav'> 
+            <h1 className='topicsHeader'>Categories</h1>
+                <ul className='topicsGrid'>
+                     {topics.map((topic) => {
 
-                </button>
-                </h2>
+                         return (
+                                <button className='topicsButtons'>
+                                        {topic.slug}
+                                </button>
+                                           
+                        )
+                    }
+                )
+            }
 
-            <h2 className='football'>
-                <button className='footballButton'>
-                    Football
-
-                </button>
-                </h2>
-
-            <h2 className='cooking'>
-                <button className='cookingButton'>
-                    Cooking
-
-                </button>
-                </h2>
-            
             <h2 className='allArticles'>
                 <button className='allArticlesButton'>
                     All Articles
-                </button>
-
-
-            </h2>
-        </div>
-    );
+                </button> 
+                  </h2>
+                </ul>
+        </main>
+       
+    )     
 };
+
 
 export default ArticlesNav;

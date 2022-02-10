@@ -6,23 +6,22 @@
 
 .title {grid-area: title;}
 
-.categories {grid-area: categories;}
-.coding {grid-area: coding; text-align: right;}
-.football{grid-area: football; text-align: center;}
-.cooking {grid-area: cooking; text-align: left;}
+.topicsGrid {
+  grid-area: topicsButtons;
+  text-align: center;
+}
+
 .allArticles {grid-area: allArticles; text-align: center;}
 
 .articlesNav{
-  display: grid;
   border-color: orange;
   border-width: 10px;  
   border-style: solid;
   grid-template-columns: auto;
   grid-template-rows: auto;
   grid-template-areas:
-  "categories categories categories"
-  "coding football cooking"
-  "allArticles allArticles allArticles"
+  "topicsButtons"
+  "allArticles"
 
 }
 
