@@ -1,36 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getArticles } from '../../utils/api';
+
 
 const ArticlesList = () => {
+
+    const [ articles, setArticles ] = useState([]);
+
+    useEffect(() => {
+        getArticles()
+        .then((res) => {
+            setArticles(res);
+            console.log(res);
+        });
+    }, []);
+    
+
     return (
-        <div className='articlesList'>
-            
-            <h2 className='title'>Title Goes here</h2>
-            <h3 className='author'>Username</h3>
-            <h3 className='date'>Date</h3>
-                <div className='comments'>
-                <button className='commentsButton'>
-                    Comments (2)
-                    
-                </button>
-                </div>
-            
-                <div className='votes'>
-                <button className='upvote'>
-                    👍
-                    </button>
-             
-                <div className='votecount'>
-                 4
-                </div>
-              
-                <button className='downvote'>
-                    👎
-                    </button>
+     
+        <main className='articlesSection'>
+            <ul className='articlesList'>
+                {articles.map((article) => {
 
-                </div>
-            
-        </div>
-    );
-};
+                    return(
+                        <li className='articleListItems'> 
+                            <h2 className='title'>{article.title}</h2>
+                            <h3 className='author'>{article.author}</h3>
+                            <h3 className='date'>{article.created_at}</h3>
+                        
+                                <div className='comments'>
+                                    <button className='commentsButton'>
+                                        Comments ({article.comment_count})
+                                    </button>
+                                </div>
+        
+                                <div className='votes'>
+                                    <button className='upvote'>
+                                        👍
+                                    </button>
+                                         
+                                    <div className='votecount'>
+                                        {article.votes}
+                                    </div>
+          
+                                    <button className='downvote'>
+                                        👎
+                                    </button>
+                                </div>
+                        </li>
+                        )
+                    })
+                }
+            </ul>
+        </main>
 
+    )           
+}
+            
 export default ArticlesList;
