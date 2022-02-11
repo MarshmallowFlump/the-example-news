@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getArticles, getArticlesByTopics } from '../../utils/api';
 import VoteOnArticles from './VoteOnArticles';
 
@@ -32,10 +33,17 @@ const ArticlesList = (props) => {
         <main className='articlesSection'>
             <ul className='articlesList'>
                 {articles.map((article) => {
-
+              
                     return(
+                        
+                        
                         <li key={article.article_id} className='articleListItems'> 
-                            <h2 className='title'>{article.title}</h2>
+                            <Link to={`/articles/${article.article_id}`}>
+                                <h2 className='title'>{article.title}</h2>
+                     
+                            </Link>
+                            
+                         
                             <h3 className='author'>{article.author}</h3>
                             <h3 className='date'>{article.created_at}</h3>
                             <h3 className='comments'>
@@ -48,7 +56,7 @@ const ArticlesList = (props) => {
                 }
             </ul>
         </main>
-    )           
-}
+        )           
+    }
             
 export default ArticlesList;
