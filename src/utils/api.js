@@ -22,3 +22,16 @@ export const getArticlesByTopics = (topic) => {
         return res.data.articles;
     })
 }
+
+export const getArticleByID = (article_id) => {
+    return newsApi.get(`/articles/${article_id}`).then((res) => {
+        return res.data.article;
+    });
+};
+
+export const patchArticleVotes = (article_id) => {
+    return newsApi.patch(`/articles/${article_id}`, { inc_votes:1 }).then((res) => {
+        console.log(res.data.article.votes)
+        return res.data.article.votes;
+    });
+}

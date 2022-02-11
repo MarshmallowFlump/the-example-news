@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { getArticles, getArticlesByTopics } from '../../utils/api';
+import VoteOnArticles from './VoteOnArticles';
 
 
 const ArticlesList = (props) => {
 
     const [ articles, setArticles ] = useState([]);
     const { topicsQuery } = props;
+
+    
 
     useEffect(() => {
         if (topicsQuery === 'All Articles') {
@@ -41,20 +44,9 @@ const ArticlesList = (props) => {
                                         Comments ({article.comment_count})
                                     </button>
                                 </div>
-        
-                                <div className='votes'>
-                                    <button className='upvote'>
-                                        👍
-                                    </button>
-                                         
-                                    <div className='votecount'>
-                                        {article.votes}
-                                    </div>
-          
-                                    <button className='downvote'>
-                                        👎
-                                    </button>
-                                </div>
+
+                                <VoteOnArticles article_id={article.article_id} current_votes={article.votes}/>
+                              
                         </li>
                         )
                     })
