@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { getTopics } from '../../utils/api';
 
-const ArticlesNav = () => {
+const ArticlesNav = (props) => {
 
+    const { setTopicsQuery } = props;
     const [ topics, setTopics ] = useState([]);
 
     useEffect(() => {
@@ -11,18 +12,19 @@ const ArticlesNav = () => {
             setTopics(res);
         });
     }, []);   
-  // console.log(topics)
+
     return (
      
         <main className='articlesNav'> 
             <h1 className='topicsHeader'>Categories</h1>
-                <ul className='topicsGrid'>
+                <div className='topicsGrid'>
                      {topics.map((topic) => {
 
                          return (
-                                <button className='topicsButtons'>
+                                <button key={topic.slug} onClick={() => setTopicsQuery(topic.slug)} className='topicsButtons'>
                                         {topic.slug}
                                 </button>
+                                   
                                            
                         )
                     }
@@ -30,11 +32,11 @@ const ArticlesNav = () => {
             }
 
             <h2 className='allArticles'>
-                <button className='allArticlesButton'>
+                <button onClick={() => setTopicsQuery('All Articles')}className='allArticlesButton'>
                     All Articles
                 </button> 
                   </h2>
-                </ul>
+                </div>
         </main>
        
     )     

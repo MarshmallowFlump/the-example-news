@@ -1,11 +1,13 @@
 import React from 'react';
 import ArticlesList from './ArticlesList';
 
-const ArticlesCard = () => {
+const ArticlesCard = (props) => {
+
+    const { topicsQuery } = props;
     return (
         <div className='articlesCard'>
-            <h1>CODING</h1>
-            <ArticlesList/>
+            <h1>{topicsQuery[0].toUpperCase() + topicsQuery.slice(1)}</h1>
+            <ArticlesList topicsQuery={topicsQuery}/>
         </div>
     );
 };
