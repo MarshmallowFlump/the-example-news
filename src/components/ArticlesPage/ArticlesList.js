@@ -38,22 +38,16 @@ const ArticlesList = (props) => {
                             <h2 className='title'>{article.title}</h2>
                             <h3 className='author'>{article.author}</h3>
                             <h3 className='date'>{article.created_at}</h3>
-                        
-                                <div className='comments'>
-                                    <button className='commentsButton'>
-                                        Comments ({article.comment_count})
-                                    </button>
-                                </div>
-
-                                <VoteOnArticles article_id={article.article_id} current_votes={article.votes}/>
-                              
+                            <h3 className='comments'>
+                                {article.comment_count} comments
+                            </h3>
+                            <VoteOnArticles article_id={article.article_id} current_votes={article.votes}/>
                         </li>
                         )
                     })
                 }
             </ul>
         </main>
-
     )           
 }
             
