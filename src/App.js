@@ -2,7 +2,7 @@ import './App.css';
 import ArticlesPage from './components/ArticlesPage/ArticlesPage';
 import ArticlePage from './components/ArticlePage/ArticlePage'
 import Header from './components/Header';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 
 function App() {
   return (
