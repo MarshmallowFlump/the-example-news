@@ -2,10 +2,16 @@ import './App.css';
 import ArticlesPage from './components/ArticlesPage/ArticlesPage';
 import ArticlePage from './components/ArticlePage/ArticlePage'
 import Header from './components/Header';
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { UserContext } from './contexts/User'
+import { useState } from 'react/cjs/react.development';
 
 function App() {
+  
+  const [ user, setUser ] = useState('jess_jelly');
+
   return (
+    <UserContext.Provider value={{ user, setUser }}>
     <BrowserRouter>
       <div className="App">
         <Header />
@@ -25,7 +31,7 @@ function App() {
       </div>
 
     </BrowserRouter>
-        
+    </UserContext.Provider>
   );
 }
 
