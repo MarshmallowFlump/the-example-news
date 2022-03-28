@@ -35,3 +35,10 @@ export const patchArticleVotes = (article_id) => {
         return res.data.article.votes;
     });
 }
+
+export const getArticleComments = (article_id) => {
+    return newsApi.get(`/articles/${article_id}/comments`)
+    .then((res) => {
+        return res.data.comments;
+    });
+};

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getArticleByID } from '../../utils/api';
 
 const ArticleBody = () => {
+
     const { article_id } = useParams();
     const [ article, setArticle ] = useState([]);
 
@@ -12,7 +13,7 @@ const ArticleBody = () => {
         .then((res) => {
             setArticle(res);
         });
-    }, []);
+    });
 
     return (
 

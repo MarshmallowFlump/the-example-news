@@ -132,7 +132,7 @@
 .commentDownvote {grid-area: commentDownvote; text-align: right;}
 .commentCount {grid-area: commentCount; text-align: center;}
 
-.commentsList {
+.commentsListItems{
   border-color: hotpink;
   border-width: 10px;
   border-style: solid;
