@@ -39,8 +39,7 @@ const VoteOnArticle = () => {
     if (err) return <p>{err}</p>;
 
     return (
-        <div> 
-            <div className='voteOnArticle'>
+        <div className='voteOnArticle'>
                 <button className='upvoteArticle' onClick={handleUpVoteClick}>
                     👍
                 </button>
@@ -51,7 +50,6 @@ const VoteOnArticle = () => {
                 <button className='downvoteArticle' onClick={handleDownVoteClick}> 
                     👎
                 </button>
-            </div>
         </div>
     );
 };
