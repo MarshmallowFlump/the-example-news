@@ -18,7 +18,7 @@ const VoteOnArticles = (props) => {
 const handleUpVoteClick = () => {
     setVotes((currCount) => currCount +1);
     setErr(null);
-    patchArticleVotes(article_id).catch((err) => {
+    patchArticleVotes(article_id, 1).catch((err) => {
         setVotes((currCount) => currCount -1);
         setErr('Something went wrong, please try again.');
     });
@@ -27,7 +27,7 @@ const handleUpVoteClick = () => {
 const handleDownVoteClick = () => {
     setVotes((currCount) => currCount -1);
     setErr(null);
-    patchArticleVotes(article_id).catch((err) => {
+    patchArticleVotes(article_id, -1).catch((err) => {
         setVotes((currCount) => currCount +1);
         setErr('Something went wrong, please try again.');
     });
