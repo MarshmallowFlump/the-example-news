@@ -29,8 +29,8 @@ export const getArticleByID = (article_id) => {
     });
 };
 
-export const patchArticleVotes = (article_id) => {
-    return newsApi.patch(`/articles/${article_id}`, { inc_votes: 1 }).then((res) => {
+export const patchArticleVotes = (article_id, vote) => {
+    return newsApi.patch(`/articles/${article_id}`, { inc_votes: vote }).then((res) => {
         return res.data.article.votes;
     });
 };
@@ -42,8 +42,8 @@ export const getArticleComments = (article_id) => {
     });
 };
 
-export const patchArticleCommentByID = (comment_id) => {
-    return newsApi.patch(`/comments/${comment_id}`, { inc_votes: 1 }).then((res) => {
+export const patchArticleCommentByID = (comment_id, vote) => {
+    return newsApi.patch(`/comments/${comment_id}`, { inc_votes: vote }).then((res) => {
         return res.data.comment;
     });
 };
