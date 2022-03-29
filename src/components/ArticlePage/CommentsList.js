@@ -4,6 +4,7 @@ import { getArticleComments } from '../../utils/api';
 import VoteOnComments from './VoteOnComments';
 
 const CommentsList = () => {
+
     const { article_id } = useParams();
 
     const [ comments, setComments ] = useState([]);
@@ -36,8 +37,8 @@ const CommentsList = () => {
                             {comment.body}
                             </p>
                         
-                        <VoteOnComments comment_id={comment.comment_id} votes={comment.votes}/>
-            
+                        <VoteOnComments comment_id={comment.comment_id} votes={comment.votes} />
+                        
                         </li>
                     )
                 })}  
