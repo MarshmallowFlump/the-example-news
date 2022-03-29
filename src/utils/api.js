@@ -20,8 +20,8 @@ export const getArticles = () => {
 export const getArticlesByTopics = (topic) => {
     return newsApi.get(`/articles?topic=${topic}`).then((res) => {
         return res.data.articles;
-    })
-}
+    });
+};
 
 export const getArticleByID = (article_id) => {
     return newsApi.get(`/articles/${article_id}`).then((res) => {
@@ -30,15 +30,20 @@ export const getArticleByID = (article_id) => {
 };
 
 export const patchArticleVotes = (article_id) => {
-    return newsApi.patch(`/articles/${article_id}`, { inc_votes:1 }).then((res) => {
-        console.log(res.data.article.votes)
+    return newsApi.patch(`/articles/${article_id}`, { inc_votes: 1 }).then((res) => {
         return res.data.article.votes;
     });
-}
+};
 
 export const getArticleComments = (article_id) => {
     return newsApi.get(`/articles/${article_id}/comments`)
     .then((res) => {
         return res.data.comments;
+    });
+};
+
+export const patchArticleCommentByID = (comment_id) => {
+    return newsApi.patch(`/comments/${comment_id}`, { inc_votes: 1 }).then((res) => {
+        return res.data.comment;
     });
 };
