@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ArticleVoteBlock from './ArticleVoteBlock';
+import VoteOnArticle from './VoteOnArticle';
 import { useParams } from 'react-router-dom';
 import { getArticleByID } from '../../utils/api';
 
@@ -33,7 +33,7 @@ const ArticleBody = () => {
             <p className='articleBodyText'>
                 {article.body}
             </p>
-        <ArticleVoteBlock />
+        <VoteOnArticle />
         </div>
     );
 };
