@@ -7,29 +7,64 @@ const VoteOnComments = (props) => {
     
     const [ commentVotes, setCommentVotes ] = useState(0);
     const [ err, setErr ] = useState(null);
+    const [ upVoted, setUpVoted ] = useState(false);
+    const [ downVoted, setDownVoted ] = useState(false);
 
     useEffect(() => {
         setCommentVotes(votes);
     }, []);
 
     const handleUpVoteClick = () => {
-        setCommentVotes((currCount) => currCount +1);
-        setErr(null);
-        patchArticleCommentByID(comment_id, 1)
-        .catch((err) => {
-            setCommentVotes((currCount) => currCount -1);
-            setErr('Something went wrong, please try again.');
-        });
+        if (upVoted === false) {
+            setUpVoted(true);
+            setDownVoted(false);
+            setCommentVotes((currCount) => currCount +1);
+                setErr(null);
+                patchArticleCommentByID(comment_id, 1).catch((err) => {
+                    setUpVoted(false);
+                    setCommentVotes((currCount) => currCount -1);
+                    setErr('Something went wrong, please try again.');
+            });
+    
+        } else if (upVoted === true && downVoted === false) {
+            alert('You have already upvoted this comment.')
+        } else if (upVoted === true && downVoted === true) {
+            setUpVoted(true);
+            setDownVoted(false);
+            setCommentVotes((currCount) => currCount +1);
+            setErr(null);
+            patchArticleCommentByID(comment_id, 1).catch((err) => {   
+                setUpVoted(false);
+                setCommentVotes((currCount) => currCount -1);
+                setErr('Something went wrong, please try again.');
+            });
+        };
     };
 
     const handleDownVoteClick = () => {
-        setCommentVotes((currCount) => currCount -1);
-        setErr(null);
-        patchArticleCommentByID(comment_id, -1)
-        .catch((err) => {
-            setCommentVotes((currCount) => currCount +1);
-            setErr('Something went wrong, please try again.');
-        });
+        if (downVoted === false) {
+            setDownVoted(true);
+            setUpVoted(false);
+            setCommentVotes((currCount) => currCount -1);
+                setErr(null);
+                patchArticleCommentByID(comment_id, -1).catch((err) => {
+                    setDownVoted(false);
+                    setCommentVotes((currCount) => currCount +1);
+                    setErr('Something went wrong, please try again.');
+            });
+        } else if (downVoted === true && upVoted === false) {
+            alert('You have already downvoted this comment.')
+        } else if (downVoted === true && upVoted === true) {
+            setUpVoted(false);
+            setDownVoted(true);
+            setCommentVotes((currCount) => currCount -1);
+            setErr(null);
+                patchArticleCommentByID(comment_id, -1).catch((err) => {
+                    setDownVoted(false);
+                    setCommentVotes((currCount) => currCount +1);
+                    setErr('Something went wrong, please try again.');
+            });
+        };
     };
 
     if (err) return <p>{err}</p>;
