@@ -1,10 +1,11 @@
 import React, {useState, useContext, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import { UserContext } from '../../contexts/User';
 import { postNewComment } from '../../utils/api';
 
-//need to know for comment posting/deleting process: current logged in user, current article id, comment body, current time
-
 const PostNewCommentCard = () => {
+
+    const { article_id } = useParams();
    
     //this will be used to confirm current logged in user in order to post or delete comments under the correct user profile
     const { loggedInUser } = useContext(UserContext);
@@ -12,6 +13,8 @@ const PostNewCommentCard = () => {
     const commentRef = useRef();
  
     const [ view, setView ] = useState('initial-view');
+
+    const [ err, setErr] = useState(null);
 
     const [ comment, setComment ] = useState('');
     
@@ -29,27 +32,14 @@ const PostNewCommentCard = () => {
 
     const handleCommentSubmit = (event) => {
         event.preventDefault();
-        setComment(commentRef.current.value)
-         //next: add in funtion to actually submit the comment to server
-        alert('A comment was submitted: ' + comment);
-        //next: add in error handling for unsuccessful attempts
-        setSubmittedView();
+        setView('submitted-view');      
+        return postNewComment(article_id, 'jessjelly', comment)
+        .catch((err) => {
+        setErr('Something went wrong and your comment could not be posted. Please try again later.')
+        });        
     };
 
-    const setSubmittedView = (input) => {
-        setView('submitted-view')
-    };
-
-    const handleDeleteComment = (input) => {
-        setView('deleted-comment-view')
-        //next: add in function to actually delete the comment from the server
-        //next: add in error handling for unsuccessful attempts
-    };
-
-    const handleOKClick = (input) => {
-        setView('initial-view');
-    };
-
+    if (err) return <p>{err}</p>
     return (
         <div className='postCommentCard'>
 
@@ -96,30 +86,10 @@ const PostNewCommentCard = () => {
 
                 <div className='submittedView'>
 
-                    Thank you for posting a comment. If you have changed your mind, you can delete your comment.
-
-                        <button className='deleteComment' onClick={handleDeleteComment}>
-
-                            Delete Comment
-
-                            </button>
+                    <h2>Your comment has been submitted.</h2>
+                    
                 </div>
-            )}
-
-            {view === 'deleted-comment-view' && (
-
-                <div className='deletedCommentView'>
-
-                    Your comment has been deleted.
-
-                        <button className='okButton' onClick={handleOKClick}>
-
-                            OK
-
-                        </button>
-                </div>
-            )}
-            
+            )}         
         </div>
     );
 };
