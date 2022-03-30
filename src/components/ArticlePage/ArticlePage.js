@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
 import { getArticleByID } from '../../utils/api';
-import ArticleNav from '../ArticlePage/ArticleNav';
+import ArticleNav from './ArticleNav';
 import ArticleBody from './ArticleBody';
 import CommentCard from './CommentCard';
+import PostNewCommentCard from './PostNewCommentCard';
+import InteractiveArticleCard from './InteractiveArticleCard';
 
 const ArticlePage = () => {
 
@@ -24,6 +26,7 @@ const ArticlePage = () => {
         <div className='articlePage'>
             <ArticleNav/>
             <ArticleBody />
+            <InteractiveArticleCard />
             <CommentCard comment_count={article.comment_count}/>
         </div>
     );
