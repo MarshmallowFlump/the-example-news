@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../contexts/User';
 import { getArticles, getArticlesByTopics } from '../../utils/api';
+import DeleteArticles from './DeleteArticles';
 import VoteOnArticles from './VoteOnArticles';
 
 
@@ -9,7 +11,11 @@ const ArticlesList = (props) => {
     const [ articles, setArticles ] = useState([]);
     const { topicsQuery } = props;
 
+    //this will be used to confirm current logged in user in order to post or delete comments under the correct user profile
+    const { loggedInUser } = useContext(UserContext);
     
+    //temporary hard-coded user for development purposes
+    const hardCodedUser = 'jessjelly'
 
     useEffect(() => {
         if (topicsQuery === 'All Articles') {
@@ -58,6 +64,13 @@ const ArticlesList = (props) => {
                                 </h3>
 
                             <VoteOnArticles article_id={article.article_id} current_votes={article.votes}/>
+
+                            {hardCodedUser === article.author && (
+
+                                <DeleteArticles article_id={article.article_id}/>
+
+                            )}
+
                         </li>
                         )
                     })
