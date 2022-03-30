@@ -33,7 +33,7 @@ const DeleteComment = (props) => {
 
                 <div className="deleteButtonView">
 
-                    <button className="deleteButton" onClick={handleDeleteClick}>
+                    <button className="deleteCommentButton" onClick={handleDeleteClick}>
 
                         Delete
 
@@ -44,7 +44,7 @@ const DeleteComment = (props) => {
 
             {view === 'are-you-sure' && (
 
-                <div className="areYouSure">
+                <div className="areYouSureComment">
 
                     <h2>
 
@@ -52,13 +52,13 @@ const DeleteComment = (props) => {
 
                     </h2>
 
-                    <button className="areYouSureButton" onClick={handleConfirmClick}>
+                    <button className="areYouSureButtonComment" onClick={handleConfirmClick}>
                         
                         Confirm
 
                     </button>
 
-                    <button className="cancelDeleteButton" onClick={handleCancelClick}>
+                    <button className="cancelDeleteButtonComment" onClick={handleCancelClick}>
 
                         Cancel 
 
@@ -79,6 +79,7 @@ const DeleteComment = (props) => {
                     
                 </div>
             )}
+            
         </div>
     )
 }; 
