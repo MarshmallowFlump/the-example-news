@@ -54,3 +54,10 @@ export const postNewComment = (article_id, loggedInUser, commentBody) => {
         return res.data;
     });
 };
+
+export const deleteComment = (comment_id) => {
+    return newsApi.delete( `/comments/${comment_id}`)
+    .then((res) => {
+        return res.data;
+    });
+};
