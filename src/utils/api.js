@@ -48,8 +48,9 @@ export const patchArticleCommentByID = (comment_id, vote) => {
     });
 };
 
-export const postNewComment = (article_id, comment) => {
-    return newsApi.post(`/articles/${article_id}/comments`, comment).then((res) => {
-        return res.data.comment;
+export const postNewComment = (article_id, loggedInUser, commentBody) => {
+    let postObject = { body: commentBody, username: loggedInUser };
+    return newsApi.post(`/articles/${article_id}/comments`, postObject).then((res) => {
+        return res.data;
     });
 };
