@@ -24,7 +24,7 @@ const ArticlesList = (props) => {
             setArticles(res);
         });
         } else {
-            getArticlesByTopics(topicsQuery) 
+            getArticles(null, null,topicsQuery) 
             .then((res) => {
                 setArticles(res);
             });
