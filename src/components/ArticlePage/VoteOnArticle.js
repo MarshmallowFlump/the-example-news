@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getArticleByID, patchArticleVotes } from '../../utils/api';
+import { patchArticleVotes } from '../../utils/api';
 
-const VoteOnArticle = () => {
+const VoteOnArticle = (props) => {
 
-    const { article_id } = useParams();
+    const { article } = props;
+    const article_id = useParams();
 
-    const [ votes, setVotes ] = useState(0);
+    const [ votes, setVotes ] = useState(article.votes);
     const [ err, setErr ] = useState(null);
     const [ upVoted, setUpVoted ] = useState(false);
     const [ downVoted, setDownVoted ] = useState(false);
-
-    useEffect(() => {
-        getArticleByID(article_id)
-        .then((article) => {
-            setVotes(article.votes)
-        });
-    }, []);
 
     const handleUpVoteClick = () => {
         if (upVoted === false) {
@@ -74,17 +68,27 @@ const VoteOnArticle = () => {
     if (err) return <p>{err}</p>;
 
     return (
+        
         <div className='voteOnArticle'>
+
                 <button className='upvoteArticle' onClick={handleUpVoteClick}>
+
                     👍
+
                 </button>
 
                 <div className='votecount'>
+
                     {votes}
-                        </div>
+
+                </div>
+
                 <button className='downvoteArticle' onClick={handleDownVoteClick}> 
+
                     👎
+
                 </button>
+
         </div>
     );
 };
