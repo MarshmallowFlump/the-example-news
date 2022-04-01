@@ -1,19 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getArticleByID } from '../../utils/api';
+import React from 'react';
 
-const ArticleBody = () => {
+const ArticleBody = (props) => {
 
-    const { article_id } = useParams();
-    const [ article, setArticle ] = useState([]);
-
-    useEffect(() => {
-        getArticleByID(article_id)
-        .then((res) => {
-            setArticle(res);
-        });
-    });
-
+    const { article } = props;
+  
     return (
 
         <div className='articleBody'>
