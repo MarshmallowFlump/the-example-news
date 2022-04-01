@@ -35,7 +35,7 @@ export const getArticles = (topic, sort_by, order) => {
     }
     else if (!topic && sort_by && order) {
         baseURL += `?sort_by=${sort_by}&order=${order}`;
-    }
+    };
 
     return newsApi.get(baseURL).then((res) => {
         return res.data.articles;
@@ -60,8 +60,21 @@ export const patchArticleVotes = (article_id, vote) => {
     });
 };
 
-export const getArticleComments = (article_id) => {
-    return newsApi.get(`/articles/${article_id}/comments`)
+export const getArticleComments = (article_id, sort_by, order) => {
+
+    let baseURL = `/articles/${article_id}/comments`
+
+    if (sort_by && order) {
+        baseURL += `?sort_by=${sort_by}&order=${order}`;
+    }
+    else if (sort_by && !order) {
+        baseURL += `?sort_by=${sort_by}`;
+    } 
+    else if (!sort_by && order) {
+        baseURL += `?order=${order}`;
+    };
+
+    return newsApi.get(baseURL)
     .then((res) => {
         return res.data.comments;
     });
