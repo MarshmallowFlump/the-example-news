@@ -11,20 +11,20 @@ export const getTopics = () => {
     });
 };
 
-export const getArticles = (sort_by, order, topic) => {
-    
-    let baseURL = `/articles?`;
+export const getArticles = (topic, sort_by, order) => {
+
+    let baseURL = `/articles`
 
     if (topic) {
-        baseURL += `&topic=${topic}`
+        baseURL += `?&topic=${topic}`
     };
-
+    
     if (sort_by) {
-        baseURL += `&sort_by=${sort_by}`
+        baseURL += `?&sort_by=${sort_by}`
     };
 
     if (order) {
-        baseURL += `&order=${order}`
+        baseURL += `?&order=${order}`
     };
 
     return newsApi.get(baseURL).then((res) => {
