@@ -1,15 +1,33 @@
 import React, {useState} from 'react';
-import ArticlesCard from './ArticlesCard';
+import { useEffect } from 'react/cjs/react.development';
+import { getArticles } from '../../utils/api';
+import ArticlesList from './ArticlesList';
 import ArticlesNav from './ArticlesNav';
 
 const ArticlesPage = () => {
 
-    const [ topicsQuery, setTopicsQuery ] = useState('All Articles');
+    const [ articles, setArticles ] = useState([]);
+
+    const [ sort, setSort ] = useState(null);
+    
+    const [ order, setOrder ] = useState(null);
+
+    const [ topic, setTopic ] = useState(null);
+    
+    useEffect(() => {
+        getArticles(topic, sort, order)
+            .then((retrievedArticles) => {
+                setArticles(retrievedArticles);
+            });
+    }, [topic, sort, order]);
     
     return (
+
         <div className='articlesPage'>
-            <ArticlesNav setTopicsQuery={setTopicsQuery}/>
-            <ArticlesCard topicsQuery={topicsQuery}/>
+
+            <ArticlesNav setTopic={setTopic} setSort={setSort} setOrder={setOrder}/>
+
+            <ArticlesList articles={articles} sort={sort} order={order} topic={topic}/>
             
         </div>
     );
