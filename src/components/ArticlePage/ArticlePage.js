@@ -5,7 +5,6 @@ import { getArticleByID } from '../../utils/api';
 import ArticleNav from './ArticleNav';
 import ArticleBody from './ArticleBody';
 import CommentCard from './CommentCard';
-import PostNewCommentCard from './PostNewCommentCard';
 import InteractiveArticleCard from './InteractiveArticleCard';
 
 const ArticlePage = () => {
@@ -21,13 +20,18 @@ const ArticlePage = () => {
         });
     });
 
-
     return (
+
         <div className='articlePage'>
+
             <ArticleNav/>
-            <ArticleBody />
-            <InteractiveArticleCard />
+
+            <ArticleBody article={article}/>
+
+            <InteractiveArticleCard article={article}/>
+
             <CommentCard comment_count={article.comment_count}/>
+            
         </div>
     );
 };
