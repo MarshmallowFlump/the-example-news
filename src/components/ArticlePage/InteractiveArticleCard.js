@@ -2,11 +2,18 @@ import React from 'react';
 import PostNewCommentCard from './PostNewCommentCard';
 import VoteOnArticle from './VoteOnArticle';
 
-const InteractiveArticleCard = () => {
+const InteractiveArticleCard = (props) => {
+
+    const { article } = props;
+
     return (
+
         <div>
-            <VoteOnArticle />
+
+            <VoteOnArticle article={article}/>
+
             <PostNewCommentCard />
+            
         </div>
     );
 };
