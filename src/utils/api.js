@@ -15,17 +15,27 @@ export const getArticles = (topic, sort_by, order) => {
 
     let baseURL = `/articles`
 
-    if (topic) {
-        baseURL += `?&topic=${topic}`
-    };
-    
-    if (sort_by) {
-        baseURL += `?&sort_by=${sort_by}`
-    };
-
-    if (order) {
-        baseURL += `?&order=${order}`
-    };
+    if (topic && !sort_by && !order) {
+        baseURL += `?topic=${topic}`
+    }
+    else if (!topic && sort_by && !order) {
+        baseURL += `?sort_by=${sort_by}`
+    } 
+    else if (!topic && !sort_by && order) {
+        baseURL += `?order=${order}`
+    }
+    else if (topic && sort_by && order) {
+        baseURL += `?topic=${topic}&sort_by=${sort_by}&order=${order}`
+    } 
+    else if (topic && sort_by && !order) {
+        baseURL += `?topic=${topic}&sort_by=${sort_by}`;
+    }
+    else if (topic && !sort_by && order) {
+        baseURL += `?topic=${topic}&order=${order}`;
+    }
+    else if (!topic && sort_by && order) {
+        baseURL += `?sort_by=${sort_by}&order=${order}`;
+    }
 
     return newsApi.get(baseURL).then((res) => {
         return res.data.articles;
