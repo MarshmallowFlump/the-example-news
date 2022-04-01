@@ -23,15 +23,13 @@ const Dropdown = (props) => {
     };
 
     const handleOrderClick = (event) => {
-        if (event.target.value === 'ascending') {
-            setOrder('asc');
-        } else {
-            setOrder('desc');
-        };
+        setOrder(event.target.value);
+
     };
 
- 
-
+    const handleSortClick = (event) => {
+        setSort(event.target.value);
+    };
     
     return (
 
@@ -45,7 +43,7 @@ const Dropdown = (props) => {
                         onChange={handleTopicClick}
                 >
                 
-                    <option defaultValue="All Topics">
+                    <option defaultValue="all topics">
                         
                         all topics
                     
@@ -67,9 +65,13 @@ const Dropdown = (props) => {
 
             Sort:
 
-                <select onChange={handleOrderClick}>
+                <select className='select' 
+                        name='orderSelect'
+                        id='orderSelect'
+                        onChange={handleSortClick}
+                >
                 
-                    <option defaultValue="Date">
+                    <option defaultValue="created_at" value="created_at">
 
                         date
 
@@ -81,25 +83,13 @@ const Dropdown = (props) => {
 
                     </option>
 
-                    <option value="topic">
-
-                        topic
-
-                    </option>
-
-                    <option value="user">
+                    <option value="votes">
 
                         votes
 
                     </option>
 
-                    <option value="date">
-
-                        date
-
-                    </option>
-
-                    <option value="comment-count">
+                    <option value="comment_count">
 
                         comment count
 
@@ -115,13 +105,13 @@ const Dropdown = (props) => {
                         onChange={handleOrderClick}
                         defaultValue="descending">
 
-                    <option value='descending'>
+                    <option value='desc'>
 
                         descending
                         
                     </option>
 
-                    <option value="ascending">
+                    <option value="asc">
 
                         ascending
                         
