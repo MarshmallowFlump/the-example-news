@@ -22,6 +22,16 @@ const Dropdown = (props) => {
         };
     };
 
+    const handleOrderClick = (event) => {
+        if (event.target.value === 'ascending') {
+            setOrder('asc');
+        } else {
+            setOrder('desc');
+        };
+    };
+
+ 
+
     
     return (
 
@@ -30,9 +40,9 @@ const Dropdown = (props) => {
             Filter:  
 
                 <select className='select'
-                    name='topicSelect'
-                    id='topicSelect'
-                    onChange={handleTopicClick}
+                        name='topicSelect'
+                        id='topicSelect'
+                        onChange={handleTopicClick}
                 >
                 
                     <option defaultValue="All Topics">
@@ -57,7 +67,7 @@ const Dropdown = (props) => {
 
             Sort:
 
-                <select>
+                <select onChange={handleOrderClick}>
                 
                     <option defaultValue="Date">
 
@@ -99,15 +109,19 @@ const Dropdown = (props) => {
 
             Order:
 
-                <select>
+                <select className='select'
+                        name='orderSelect'
+                        id='orderSelect'
+                        onChange={handleOrderClick}
+                        defaultValue="descending">
 
-                    <option onClick={handleDescClick} defaultValue="Descending">
+                    <option value='descending'>
 
                         descending
                         
                     </option>
 
-                    <option onClick={handleAscClick} value="">
+                    <option value="ascending">
 
                         ascending
                         
