@@ -1,28 +1,18 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import { getArticleComments } from '../../utils/api';
+import React from 'react';
 import VoteOnComments from './VoteOnComments';
-import { UserContext } from '../../contexts/User';
 import DeleteComment from './DeleteComment';
+//import { useContext } from 'react';
+//import { UserContext } from '../../contexts/User';
 
-const CommentsList = () => {
+const CommentsList = (props) => {
 
-    const { article_id } = useParams();
+    const comments = props.comments;
 
     //this will be used to confirm current logged in user in order to post or delete comments under the correct user profile
-    const { loggedInUser } = useContext(UserContext);
+    //const { loggedInUser } = useContext(UserContext);
 
     //temporary hard-coded user for development purposes
     const hardCodedUser = 'jessjelly'
-
-    const [ comments, setComments ] = useState([]);
-
-    useEffect(() => {
-        getArticleComments(article_id)
-        .then((res) => {
-            setComments(res);
-        });
-    });
 
     return (
         <main className='commentsSection'>     
