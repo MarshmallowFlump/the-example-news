@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { getArticleByID, patchArticleVotes } from '../../utils/api';
+import React, { useState } from 'react';
+import { patchArticleVotes } from '../../utils/api';
 
 const VoteOnArticles = (props) => {
     
-    const { article_id } = props;
+    const { article_id, current_votes  } = props;
     
-    const [ votes, setVotes ] = useState(0);
+    const [ votes, setVotes ] = useState(current_votes);
     const [err, setErr] = useState(null);
     const [ upVoted, setUpVoted ] = useState(false);
     const [ downVoted, setDownVoted ] = useState(false);
-
-    useEffect(() => {
-        getArticleByID(article_id)
-        .then((article) => {
-            setVotes(article.votes);
-        });
-    }, []);
 
 const handleUpVoteClick = () => {
     if (upVoted === false) {
