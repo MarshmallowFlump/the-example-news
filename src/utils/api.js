@@ -99,3 +99,10 @@ export const deleteComment = (comment_id) => {
         return res.data;
     });
 };
+
+export const getUser = (username) => {
+    return newsApi.get(`/users/${username}`)
+    .then((res) => {
+        return res.data;
+    });
+};
