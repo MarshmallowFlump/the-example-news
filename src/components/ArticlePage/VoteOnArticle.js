@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { patchArticleVotes } from '../../utils/api';
 
 const VoteOnArticle = (props) => {
 
+    const { article_id } = useParams();
+    
     const { article } = props;
-    const article_id = useParams();
 
-    const [ votes, setVotes ] = useState(article.votes);
+    const current_votes = article.votes;
+
+    const [ votes, setVotes ] = useState(0);
     const [ err, setErr ] = useState(null);
     const [ upVoted, setUpVoted ] = useState(false);
     const [ downVoted, setDownVoted ] = useState(false);
+
+    useEffect(() => {
+        setVotes(current_votes);
+    }, [current_votes]);
 
     const handleUpVoteClick = () => {
         if (upVoted === false) {
