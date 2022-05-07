@@ -4,7 +4,11 @@ import { getArticles } from '../../utils/api';
 import ArticlesList from './ArticlesList';
 import ArticlesNav from './ArticlesNav';
 
-const ArticlesPage = () => {
+const ArticlesPage = (props) => {
+
+    const user = props.user;
+
+    const profile = props.profile;
 
     const [ articles, setArticles ] = useState([]);
 
@@ -25,9 +29,9 @@ const ArticlesPage = () => {
 
         <div className='articlesPage'>
 
-            <ArticlesNav setTopic={setTopic} setSort={setSort} setOrder={setOrder}/>
+            <ArticlesNav setTopic={setTopic} setSort={setSort} setOrder={setOrder} user={user} profile={profile}/>
 
-            <ArticlesList articles={articles} sort={sort} order={order} topic={topic}/>
+            <ArticlesList articles={articles} sort={sort} order={order} topic={topic} user={user}/>
             
         </div>
     );
