@@ -1,18 +1,18 @@
 import React from 'react';
-import PostNewCommentCard from './PostNewCommentCard';
+import PostNewCommentCard from './ArticleComments/PostNewCommentCard';
 import VoteOnArticle from './VoteOnArticle';
 
 const InteractiveArticleCard = (props) => {
 
-    const { article } = props;
+    const { article, username } = props;
 
-    return (
+        return (
 
         <div>
 
             <VoteOnArticle article={article}/>
 
-            <PostNewCommentCard />
+            <PostNewCommentCard username={username} />
             
         </div>
     );
