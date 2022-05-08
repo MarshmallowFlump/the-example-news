@@ -21,7 +21,13 @@ const ArticlesNav = (props) => {
                 
                 <Link to={`/users/${profile.username}`}>
 
-                My Profile
+                    My Profile
+
+                </Link>
+
+                <Link to={ `/my-articles/${profile.username}`}>
+
+                    My Articles
 
                 </Link>
             
