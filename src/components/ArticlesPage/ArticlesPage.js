@@ -6,7 +6,7 @@ import ArticlesNav from './ArticlesNav';
 
 const ArticlesPage = (props) => {
 
-    const user = props.user;
+    const user = props.profile.username;
 
     const profile = props.profile;
 
@@ -31,7 +31,7 @@ const ArticlesPage = (props) => {
 
             <ArticlesNav setTopic={setTopic} setSort={setSort} setOrder={setOrder} user={user} profile={profile}/>
 
-            <ArticlesList articles={articles} sort={sort} order={order} topic={topic} user={user}/>
+            <ArticlesList setArticles={setArticles} articles={articles} sort={sort} order={order} topic={topic} user={user}/>
             
         </div>
     );
