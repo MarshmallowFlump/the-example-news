@@ -22,12 +22,6 @@ const MyProfile = (props) => {
 
             <img src={`${profile.avatar_url}`} alt='my avatar' />
 
-            <Link to={ `/my-articles/${profile.username}`}>
-
-                My Articles
-
-                </Link>
-
         </div>
     );
 };
