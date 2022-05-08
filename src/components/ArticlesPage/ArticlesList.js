@@ -6,7 +6,7 @@ import VoteOnArticles from './VoteOnArticles';
 
 const ArticlesList = (props) => {
 
-    const { articles, user } = props;
+    const { articles, user, setArticles } = props;
 
     return (
      
@@ -53,7 +53,7 @@ const ArticlesList = (props) => {
 
                             {user === article.author && (
 
-                            <DeleteArticles article_id={article.article_id}/>
+                            <DeleteArticles article_id={article.article_id} articles={articles} setArticles={setArticles}/>
 
                             )}
 
