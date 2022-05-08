@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { deleteArticle } from '../../utils/api';
 
 const DeleteArticles = (props) => {
 
-    const { article_id } = props;
+    const { article_id, articles, setArticles } = props;
 
     const [ view, setView ] = useState('delete-button-view');
 
@@ -15,11 +14,11 @@ const DeleteArticles = (props) => {
 
     const handleConfirmClick = (input) => {
         setView('article-deleted');
-        //cannot use this function as the example API does not have a delete article endpoint, however, this is how it would be done if it did.
-        //deleteArticle(article_id)
-       // .catch((err) => {
-            //setErr('Something went wrong and your article could not be deleted. Please try again later.');
-        //});
+        let deletedArticleList = articles.filter((article)=> {
+           return article.article_id !== article_id
+        });
+        setArticles(deletedArticleList);
+        //deleting articles is hard-coded and not persistent as the example API does not have a delete article endpoint
     };
 
     const handleCancelClick = (input) => {
