@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
 import { getArticleByID } from '../../utils/api';
-import Back from '../reuseable/Back';
+import Home from '../reuseable/Home';
 import ArticleBody from './ArticleBody';
 import CommentCard from './ArticleComments/CommentCard';
 import InteractiveArticleCard from './InteractiveArticleCard';
@@ -27,7 +27,7 @@ const ArticlePage = (props) => {
 
         <div className='articlePage'>
 
-            <Back/>
+            <Home/>
 
             <ArticleBody article={article}/>
 
