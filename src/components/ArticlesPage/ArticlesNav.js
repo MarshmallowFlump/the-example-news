@@ -24,12 +24,6 @@ const ArticlesNav = (props) => {
                     My Profile
 
                 </Link>
-
-                <Link to={ `/my-articles/${profile.username}`}>
-
-                    My Articles
-
-                </Link>
             
                 <Link to={`/z`}>
 
