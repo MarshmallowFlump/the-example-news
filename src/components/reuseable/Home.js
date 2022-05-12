@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Back = () => {
+const Home = () => {
 
     return (
 
@@ -9,11 +9,11 @@ const Back = () => {
 
             <Link to={`/`}>
 
-                <button className='backButton'>
+                <button className='homeButton'>
 
                     <h1>
 
-                        Back
+                        Home
 
                     </h1>
 
@@ -25,4 +25,4 @@ const Back = () => {
     );
 };
 
-export default Back;
+export default Home;
