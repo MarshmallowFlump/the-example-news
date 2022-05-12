@@ -2,8 +2,8 @@ import './App.css';
 import ArticlesPage from './components/ArticlesPage/ArticlesPage';
 import ArticlePage from './components/ArticlePage/ArticlePage'
 import Header from './components/Header';
-import MyProfile from './components/UserProfile/MyProfile.js';
-import MyArticlesPage from './components/MyArticles/MyArticlesPage';
+import UserArticles from './components/UserArticles/UserArticles';
+import UserProfiles from './components/UserProfiles/UserProfiles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { getUser } from './utils/api'
@@ -38,9 +38,9 @@ function App() {
 
                 <Route path="/articles/:article_id" element={<ArticlePage profile={profile}/>} />
                 
-                <Route path="/users/:username" element={<MyProfile profile={profile}/>}  />
+                <Route path="/users/:user_id" element={<UserProfiles />} />
 
-                <Route path="/my-articles/:user_id" element={<MyArticlesPage profile={profile}/> } />
+                <Route path="/users/:user_id/articles" element={<UserArticles profile={profile} /> } />
 
               </Routes>  
            
