@@ -40,7 +40,6 @@ const ArticlesList = (props) => {
 
                             </Link>
 
-
                             <h3 className='date'>
 
                                 {article.created_at}
