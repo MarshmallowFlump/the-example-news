@@ -30,12 +30,16 @@ const ArticlesList = (props) => {
                      
                             </Link>
                             
-                         
-                            <h3 className='author'>
+                            <Link to={`/users/${article.author}`}>
+
+                               <h3 className='author'>
 
                                 {article.author}
 
-                            </h3>
+                                </h3>  
+
+                            </Link>
+
 
                             <h3 className='date'>
 
