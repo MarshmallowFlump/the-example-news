@@ -7,6 +7,7 @@ import UserProfiles from './components/UserProfiles/UserProfiles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { getUser } from './utils/api'
+import PostNewArticle from './components/UserArticles/NewArticleComponents/PostNewArticle';
 
 function App() {
   
@@ -41,6 +42,8 @@ function App() {
                 <Route path="/users/:user_id" element={<UserProfiles />} />
 
                 <Route path="/users/:user_id/articles" element={<UserArticles profile={profile} /> } />
+
+                <Route path="/users/:user_id/post-new-article" element={<PostNewArticle /> } />
 
               </Routes>  
            
