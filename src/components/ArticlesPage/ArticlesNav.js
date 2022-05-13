@@ -25,7 +25,7 @@ const ArticlesNav = (props) => {
 
                 </Link>
             
-                <Link to={`/z`}>
+                <Link to={`/users/${profile.username}/post-new-article`}>
 
                     Post New Article
 
