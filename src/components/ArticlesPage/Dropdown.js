@@ -33,15 +33,17 @@ const Dropdown = (props) => {
     
     return (
 
-        <div>
+        <div className='dropdown'>
 
-            Filter:  
+            <ul className='dropdownList'>
 
-                <select className='select'
+                <li className='filterDropdown'>
+                    Filter:  
+
+                    <select className='select'
                         name='topicSelect'
                         id='topicSelect'
-                        onChange={handleTopicClick}
-                >
+                        onChange={handleTopicClick}>
                 
                     <option defaultValue="all topics">
                         
@@ -63,13 +65,16 @@ const Dropdown = (props) => {
                 
                 </select>
 
-            Sort:
+                </li>
 
-                <select className='select' 
+                <li className='sortDropdown'>
+
+                    Sort:
+
+                    <select className='select' 
                         name='orderSelect'
                         id='orderSelect'
-                        onChange={handleSortClick}
-                >
+                        onChange={handleSortClick}>
                 
                     <option defaultValue="created_at" value="created_at">
 
@@ -97,9 +102,13 @@ const Dropdown = (props) => {
                                 
                 </select>
 
-            Order:
+                </li>
 
-                <select className='select'
+                <li className='orderDropdown'>
+                
+                    Order:
+
+                    <select className='select'
                         name='orderSelect'
                         id='orderSelect'
                         onChange={handleOrderClick}
@@ -118,6 +127,10 @@ const Dropdown = (props) => {
                     </option>
 
                 </select>
+
+                </li>
+
+            </ul>
 
         </div>
     );
