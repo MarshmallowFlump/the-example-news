@@ -3,15 +3,24 @@
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     background-color: black;
+    margin: 0px;
 }
 
 .headerBox {
-    padding: 10px;
     background-color: navy;
 }
 
 .header {
-    color: white;    
+    color: white; 
+    padding: 20px;
+    margin: 0px;   
+}
+
+.welcome {
+    color: white;
+    background-color: black;
+    padding: 5px;
+    margin: 0;
 }
 
 .articlesNav {
@@ -22,12 +31,7 @@
     color: black;
     }
 
-.welcome {
-    color: white;
-    background-color: black;
-    margin: 0;
-    padding: 5px;
-}
+
 
 .navOptions {
     background-color: cornflowerblue;
