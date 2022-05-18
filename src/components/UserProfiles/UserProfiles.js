@@ -17,40 +17,61 @@ const UserProfiles = () => {
     }, [user_id])
 
     return (
-        <div>
-             <Home />
+        <div className='profilePage'>
+             
+            <Home />
 
-                <h1>
+            <div className='profileBox'>
+
+                <h1 className='profile'>
 
                     Profile
-
+                
                 </h1>
+                
+                    <div className='userProfileContainer'>
 
-                <h2>
+                        <h2 className='username'>
                     
-                    Username: {profile.username}
+                            Username: 
                     
-                </h2>
+                        </h2>
+                
+                        <h2 className='actualUsername'>
 
-                <h2>
-                    
-                    Name: {profile.name}
-                    
-                </h2>
+                            {profile.username}
 
-                <h2>
+                        </h2>
+
+                        <h2 className='name'>
+                    
+                            Name: 
+                    
+                        </h2>
+
+                        <h2 className='actualName'>
+
+                            {profile.name}
+
+                        </h2>
+
+                    </div>
+
+                <h2 className='avatar'>
                     
                     Avatar:
                     
                 </h2>
 
-                <img src={`${profile.avatar_url}`} alt='my avatar' />
-                
-                <Link to={`/users/${profile.username}/articles/`}>
+                <img className='avatarImage' src={`${profile.avatar_url}`} alt='my avatar' />
+
+                <Link className='viewAllPostsLink' to={`/users/${profile.username}/articles/`}>
                     
-                View All Posts
+                    View All Posts
                 
                 </Link>
+             
+            </div>        
 
         </div>
     );
