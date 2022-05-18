@@ -2,7 +2,6 @@ import React from 'react';
 import Dropdown from './Dropdown';
 import { Link } from 'react-router-dom';
 
-
 const ArticlesNav = (props) => {
 
     const { setTopic, setSort, setOrder, profile } = props;
@@ -10,34 +9,32 @@ const ArticlesNav = (props) => {
     return (
      
         <main className='articlesNav'> 
-
-            <h2>
-                
-                Welcome, {profile.name}!
             
-            </h2>
+            <div className='navOptions'>
 
-            <h1>
-                
-                <Link to={`/users/${profile.username}`}>
+                <h3 className='myLinks'>
+                                
+                                <Link to={`/users/${profile.username}`}>
 
-                    My Profile
+                                    My Profile
 
-                </Link>
-            
-                <Link to={`/users/${profile.username}/post-new-article`}>
+                                </Link>
 
-                    Post New Article
+                                <Link to={`/users/${profile.username}/post-new-article`}>
+                                
+                                    Post New Article
 
-                </Link>
+                                </Link>
 
-            </h1>
+                            </h3>
 
-            <Dropdown 
-                    setTopic={setTopic}
-                    setSort={setSort}
-                    setOrder={setOrder}
-            />
+                            <Dropdown 
+                                    setTopic={setTopic}
+                                    setSort={setSort}
+                                    setOrder={setOrder}
+                            />
+
+            </div> 
                 
         </main>
     );
