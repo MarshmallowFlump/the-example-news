@@ -66,22 +66,27 @@ const handleDownVoteClick = () => {
 if (err) return <p>{err}</p>;
 
     return (
-        <div>
-              <div className='votes'>
-                                    <button className='upvote' onClick={handleUpVoteClick}>
-                                        👍
-                                    </button>
-                                         
-                                    <div className='votecount'>
-                                        {votes}
-                                    </div>
-          
-                                    <button className='downvote' onClick={handleDownVoteClick}>
-                                        👎
-                                    </button>
-                                </div>
-            
-        </div>
+        <main className='voting'>
+
+                <button className='upvoteButton' onClick={handleUpVoteClick}>
+
+                    👍
+                                                                    
+                </button>
+                                                                                        
+                <div className='votecount'>
+                    
+                    {votes}
+                                                    
+                </div>
+                        
+                <button className='downvoteButton' onClick={handleDownVoteClick}>
+
+                    👎
+                                                                    
+                </button>
+                                                                
+        </main>
     );
 };
 
