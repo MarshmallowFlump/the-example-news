@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import ArticlesPage from './components/ArticlesPage/ArticlesPage';
 import ArticlePage from './components/ArticlePage/ArticlePage'
 import Header from './components/Header';
@@ -27,7 +27,7 @@ function App() {
 
       <div className="App">
 
-        <Header />
+        <Header name={profile.username}/>
 
           <div className='content'>
 

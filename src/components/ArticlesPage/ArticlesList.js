@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import DeleteArticles from './DeleteArticles';
 import VoteOnArticles from './VoteOnArticles';
+import Date from '../reuseable/Date';
 
 
 const ArticlesList = (props) => {
@@ -9,9 +10,7 @@ const ArticlesList = (props) => {
     const { articles, user, setArticles } = props;
 
     return (
-     
-        <main className='articlesSection'>
-            
+                 
             <ul className='articlesList'>
 
                 {articles.map((article) => {
@@ -22,7 +21,7 @@ const ArticlesList = (props) => {
                             
                             <Link to={`/articles/${article.article_id}`}>
 
-                                <h2 className='title'>
+                                <h2 className="articleTitle">
                                     
                                     {article.title}
 
@@ -32,44 +31,49 @@ const ArticlesList = (props) => {
                             
                             <Link to={`/users/${article.author}`}>
 
-                               <h3 className='author'>
+                                <h3 className='articleAuthor'>
+                                                                                    
+                                    {article.author}
 
-                                {article.author}
-
-                                </h3>  
+                                </h3>
 
                             </Link>
 
-                            <h3 className='date'>
+                            <h3 className='articleDate'>
 
-                                {article.created_at}
+                                <Date date={article.created_at} />
 
                             </h3>
 
-                            <h3 className='comments'>
+                            <Link to={`/articles/${article.article_id}`}>
 
-                                {article.comment_count} comments
-                                
-                            </h3>
+                                <h3 className='articleComments'>
 
-                            <VoteOnArticles  article_id={article.article_id} current_votes={article.votes}/>
+                                    {article.comment_count} comments
+                                                                                                
+                                </h3>          
+
+                            </Link>      
+
+                            <VoteOnArticles article_id={article.article_id} current_votes={article.votes}/>
 
                             {user === article.author && (
+                            
+                            <div className='articlesDelete'>
 
-                            <DeleteArticles article_id={article.article_id} articles={articles} setArticles={setArticles}/>
+                                <DeleteArticles article_id={article.article_id} articles={articles} setArticles={setArticles}/>
+                            
+                            </div>
 
                             )}
-
+                        
                         </li>
 
-                        )
-                    })
-                }
-            
-            </ul>
-
-        </main>
-
+                    )
+                })
+            }   
+        
+        </ul>
     )           
 };
             

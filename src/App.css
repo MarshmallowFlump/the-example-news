@@ -1,147 +1,181 @@
+.App{
+    min-width: 375px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: black;
+}
+
+.headerBox {
+    padding: 10px;
+    background-color: navy;
+}
+
 .header {
-  border-color: red;
-  border-width: 10px;
-  border-style: solid;
+    color: white;    
 }
 
-.title {grid-area: title;}
+.articlesNav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
+    }
 
-.topicsGrid {
-  grid-area: topicsButtons;
-  text-align: center;
+.welcome {
+    color: white;
+    background-color: black;
+    margin: 0;
+    padding: 5px;
 }
 
-.allArticles {grid-area: allArticles; text-align: center;}
-
-.articlesNav{
-  border-color: orange;
-  border-width: 10px;  
-  border-style: solid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas:
-  "topicsButtons"
-  "allArticles"
-
+.navOptions {
+    background-color: cornflowerblue;
 }
 
-.articlesPage{
-  border-color: purple;
-  border-width: 10px;  
-  border-style: solid;
+.myLinks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: black;
 }
 
-.articlesCard{
-  border-color: green;
-  border-width: 10px;  
-  border-style: solid;
+.dropdownList {
+    list-style-type: none;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "filterDropdown"
+    "sortDropdown"
+    "orderDropdown";
+    justify-self: center;
+    justify-content: center;
+    gap: 10px 10px;
 }
 
-.title {grid-area: title;}
-.author {grid-area: author;}
-.date {grid-area: date;}
-.comments {grid-area: comments;}
-.votes {grid-area: votes;}
+.filterDropdown{
+    justify-self: left;
+}
 
-.articlesSection{
-  display: grid;
-  
+.sortDropdown{
+    justify-self: left;
+}
+
+.orderDropdown{
+    justify-self: left;
+}
+
+.articlesList{
+    font-size: small;
+    border: solid;
+    border-color: black;
+    border-radius: 50px;
+    list-style-type: none;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.articleTitle {
+    grid-area: title;
+    background-color: navy;
+    color: white;
+    padding: 5px;
+}
+
+.articleAuthor {
+    grid-area: author;
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+    margin: 0;
+    padding: 5px;
+}
+
+.articleDate {
+    grid-area: date;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 5px;
+}
+
+.articleComments {
+    grid-area: comments;
+    color: white;
+    background-color: rgb(36, 90, 190);
+    margin: 0;
+    padding: 5px;
+}
+
+.articlesDelete {
+    grid-area: delete;
+    background-color: white;
+}
+
+.deleteArticleButton {
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin: 3px;
+}
+
+.voting {
+    grid-area: voting;
+}
+
+.votecount {
+    display: inline; 
+}
+
+.upvoteButton {
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+    border-color: white;
+    border-width: 5px;
+    border-radius: 10px;    
+}
+
+.downvoteButton {
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+    border-color: gray;
+    border-width: 5px;
+    border-radius: 10px;
 }
 
 .articleListItems {
-  display: grid;
-  border-color: blue;
-  border-width: 10px;
-  border-style: solid;
-  -ms-grid-column-span: 100%;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas:
-  "title title votes"
-  "author date votes"
-  "comments comments votes"
-  ;
+    display: grid;
+    grid-template-areas:
+    "title"
+    "date"
+    "author"
+    "comments"
+    "voting"
+    "delete";
+    border-width: 5px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 20px;
+    text-align: center;
+    background-color: navy;
+    margin: 10px;
 }
 
-.articlePage {
-  border-color: purple;
-  border-width: 10px;  
-  border-style: solid;
+.votecount {
+    font-weight: bold;
+    color: white;
 }
 
-.articleNav{
-  border-color: orange;
-  border-width: 10px;  
-  border-style: solid;
-}
-
-.articleBody{
-  border-color: green;
-  border-width: 10px;  
-  border-style: solid;
-}
-
-.commentCard {
-  display: grid;
-  border-color: blue;
-  border-width: 10px;
-  border-style: solid;
-}
-
-.articleTitle {grid-area: articleTitle; text-align: left;}
-.articleUsername {grid-area: articleUsername;}
-.articleDate {grid-area: articleDate; text-align: center;}
-.articleBodyText{grid-area: articleBodyText;}
-.upvoteArticle {grid-area: upvoteArticle;}
-.downvoteArticle {grid-area: downvoteArticle;}
-.articleVoteCount {grid-area: articleVoteCount; text-align: center;}
-.articleVoteBlock {grid-area: articleVoteBlock; text-align: center;}
-
-.articleBody {
-  border-color: yellow;
-  border-width: 10px;
-  border-style: solid;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas:
-  "articleTitle  articleTitle articleTitle"
-  "articleUsername  articleDate   articleDate"
-  "articleBodyText articleBodyText articleBodyText"
-  "articleVoteBlock articleVoteBlock articleVoteBlock"
-
-}
-
-.articleVoteBlock{
-  border-color: greenyellow;
-  border-width: 10px;
-  border-style: solid;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  align-items: center;
-  justify-content: center;
-  grid-template-areas:
-  "upvoteArticle articleVoteCount downvoteArticle";
-}
-
-.commentUsername {grid-area: commentUsername; text-align: left;}
-.commentBody {grid-area: commentBody;}
-.commentDate {grid-area: commentDate; text-align: center;}
-.commentUpvote {grid-area: commentUpvote; text-align: left;}
-.commentDownvote {grid-area: commentDownvote; text-align: right;}
-.commentCount {grid-area: commentCount; text-align: center;}
-
-.commentsListItems{
-  border-color: hotpink;
-  border-width: 10px;
-  border-style: solid;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas:
-  "commentUsername  commentDate commentDate"
-  "commentBody  commentBody   commentUpvote"
-  "commentBody commentBody commentCount"
-  "commentBody commentBody commentDownvote"
+.titleList{
+    background-color: rgb(36, 90, 190);
+    color: black;
+    padding-left: 5px;
 }
