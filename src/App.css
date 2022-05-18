@@ -74,9 +74,6 @@
 
 .articlesList{
     font-size: small;
-    border: solid;
-    border-color: black;
-    border-radius: 50px;
     list-style-type: none;
     color: black;
     padding: 0;
@@ -182,4 +179,105 @@
     background-color: rgb(36, 90, 190);
     color: black;
     padding-left: 5px;
+}
+
+.articleNav {
+    background-color: cornflowerblue;
+}
+
+.homeButton{
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.profileBox {
+    background-color: navy;
+    color: white;
+    text-align: center;border-style: solid;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: white;
+    margin: 10px;
+}
+
+.userProfileContainer {
+    display: grid;
+    padding: 0px;
+    font-size: small;
+    grid-template-areas:
+    "username actualUsername"
+    "name actualName";
+    margin: 0;
+}
+
+.profile {
+    padding: 10px;
+    margin: 0;
+}
+
+.username {
+    display: inline;
+    background-color: black;
+    color: white;
+    text-align: right;
+    padding: 10px;
+    margin: 0px;
+}
+
+.actualUsername {
+    background-color: black;
+    display: inline;
+    text-align: left;
+    padding: 10px;
+    margin: 0px
+}
+
+.name {
+    display: inline;
+    background-color: cornflowerblue;
+    color: white;
+    text-align: right;
+    padding: 10px;
+    margin: 0px;
+}
+
+.actualName {
+    display: inline;
+    text-align: left;
+    background-color: cornflowerblue;
+    color: white;
+    padding: 10px;
+    margin: 0px;
+}
+
+.avatar {
+    background-color: rgb(36, 90, 190);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+}
+
+.avatarImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    max-width: 50%;
+}
+
+.viewAllPostsLink {
+    display: block;
+    background-color: navy;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: medium;
+    font-weight: bold;
 }
