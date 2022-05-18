@@ -13,7 +13,7 @@ const Date = (props) => {
 
         <div className='date'>
 
-               {/* {britishDate} at {time} */}
+               {britishDate} at {time}
 
         </div>
     );
