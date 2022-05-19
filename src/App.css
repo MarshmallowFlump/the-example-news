@@ -357,3 +357,277 @@
     color: black;
     border-radius: 10px;
 }
+
+.articlePageTitle {
+    grid-area: titleArticlePage;
+    display: inline;
+    margin: 0;
+    padding: 10px;
+    font-size: x-large;
+}
+
+.articlePageDate {
+    grid-area: dateArticlePage;
+    display: inline;
+    background-color: black;
+    padding: 10px;
+    margin: 0px;
+    font-size: medium;
+}
+
+.articlePageUsername {
+    grid-area: usernameArticlePage;
+    display: inline;
+    background-color: rgb(36, 90, 190);
+    padding: 10px;
+    margin: 0px;
+    font-size: medium;
+}
+
+.articlePageBodyText {
+    grid-area: bodyArticlePage;
+    background-color: cornflowerblue;
+    padding: 10px;
+    margin: 0;
+    color: black;
+    font-size: large;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.articlePageBody {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    border: solid;
+    border-color: white;
+    border-width: 5px;
+    border-radius: 30px;
+    margin: 10px;
+    background-color: navy;
+    color: white;
+    grid-template-areas: 
+        "titleArticlePage"
+        "dateArticlePage"
+        "usernameArticlePage"
+        "bodyArticlePage";
+}
+
+.interactiveCard {
+    display: inline-block;
+    background-color: navy;
+    border: white;
+    border-width: 5px;
+    border-radius: 20px;
+    border-style: solid;
+    padding: 10px;
+}
+
+.upvoteArticle {
+    font-size: large;
+    border: 5px;
+    border-radius: 10px;
+    padding: 3px;
+    border-color: white;
+    border-style: outset;
+    margin: 10px;
+}
+
+.downvoteArticle {
+    font-size: large;
+    border: 5px;
+    border-radius: 10px;
+    padding: 3px;
+    border-color: gray;
+    border-style: outset;
+    margin: 10px;
+}
+
+.postCommentButton {
+    font-size: large;
+    border: 5px;
+    border-radius: 10px;
+    padding: 3px;
+    border-color: white;
+    border-style: outset;
+    margin: 10px
+}
+
+.commentForm {
+    font-size: large;
+    padding: 5px;
+}
+
+.input {
+    font-size: large;
+    margin: 10px;
+    padding: 5px;
+}
+
+.submitComment {
+    font-size: large;
+    border: 5px;
+    border-radius: 10px;
+    padding: 3px;
+    border-color: white;
+    border-style: outset;
+    margin: 10px
+}
+
+.cancelButton {
+    font-size: large;
+    border: 5px;
+    border-radius: 10px;
+    padding: 3px;
+    border-color: gray;
+    border-style: outset;
+    margin: 10px
+}
+
+.submittedView {
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.commentCard {
+    background-color: navy;
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 30px;
+    margin: 10px;
+    color: white;
+    font-size: x-small;
+}
+
+.dropdownComments {
+    background-color: black;
+    margin: 0;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.selectComments {
+    font-size: large;
+    margin: 10px;
+}
+
+.commentsList {
+    list-style-type: none;
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    font-size: small;
+}
+
+.commentsListItems {
+    background-color: navy;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.commentUsername {
+    margin: 0px;
+    padding: 10px;
+}
+
+.commentDate {
+    background-color: black;
+    margin: 0px;
+    padding: 5px;
+    font-size: small;
+}
+
+.commentBody {
+    background-color: cornflowerblue;
+    color: black;
+    margin: 0px;
+    padding: 5px;
+    font-size: medium;
+}
+
+.voteOnComment {
+    display: inline;
+    font-weight: bold;
+    font-size: medium;
+    margin: 0px;
+}
+
+.commentUpvote{
+    font-size: medium;
+    border: 5px;
+    border-radius: 10px;
+    padding: 3px;
+    border-color: white;
+    border-style: outset;
+    margin: 10px;
+}
+
+.commentDownvote {
+    font-size: medium;
+    border: 5px;
+    border-radius: 10px;
+    padding: 3px;
+    border-color: gray;
+    border-style: outset;
+    margin: 10px;
+}
+
+.deleteButtonView {
+    background-color: white;
+    margin: 0px;
+    padding-top: 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.deleteCommentButton {
+    border-width: 5px;
+    border-style: outset;
+    border-radius: 10px;
+    border-color: gray;
+    padding: 5px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.areYouSureComment {
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: black;
+    margin: 0px;
+    padding: 5px;
+}
+
+.areYouSureText {
+    font-size: medium;
+}
+
+.confirmDeleteButtonComment {  margin: 5px;
+    padding: 5px;
+    border-width: 5px;
+    border-style: outset;
+    border-color: rgb(36, 90, 190);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.cancelDeleteButtonComment {
+    margin: 5px;
+    padding: 5px;
+    border-width: 5px;
+    border-style: outset;
+    border-color: gray;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: medium;
+}
