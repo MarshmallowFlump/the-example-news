@@ -1,41 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import DeleteMyArticles from './DeleteMyArticles';
+import Date from '../reuseable/Date'
 
 const UserArticlesList = (props) => {
-
 
     const { myArticles, setMyArticles, loggedInUser } = props;
 
     return (
         <div>
-             <ul className='myArticlesList'>
+             <ul className='userArticlesList'>
 
                 {myArticles.map((article) => {
 
                     return (
 
-                        <li key={article.article_id} className='myArticleListItems'>
+                        <li key={article.article_id} className='userArticlesListItems'>
 
                             <Link to={`/articles/${article.article_id}`}>
 
-                                <h2 className='title'>
+                                <h2 className='userArticlesTitle'>
+
                                     {article.title}
+
                                 </h2>
-                                </Link>
-                                <h3 className='author'>
 
-                                {article.author}
+                            </Link>
 
-                            </h3>
+                            <h3 className='userArticlesDate'>
 
-                            <h3 className='date'>
-
-                                {article.created_at}
+                                <Date date={article.created_at} />
 
                             </h3>
 
-                            <h3 className='comments'>
+                            <h3 className='userArticlesComments'>
 
                                 {article.comment_count} comments
                                 
@@ -49,7 +47,9 @@ const UserArticlesList = (props) => {
                         
                     )
                 })}
-                </ul>  
+
+            </ul>  
+            
         </div>
     );
 };
