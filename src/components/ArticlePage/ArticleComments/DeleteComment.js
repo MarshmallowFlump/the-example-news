@@ -46,13 +46,13 @@ const DeleteComment = (props) => {
 
                 <div className="areYouSureComment">
 
-                    <h2>
+                    <h2 className="areYouSureText">
 
                         Are you sure you want to delete this comment?
 
                     </h2>
 
-                    <button className="areYouSureButtonComment" onClick={handleConfirmClick}>
+                    <button className="confirmDeleteButtonComment" onClick={handleConfirmClick}>
                         
                         Confirm
 
