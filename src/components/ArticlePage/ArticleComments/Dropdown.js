@@ -14,11 +14,11 @@ const Dropdown = (props) => {
 
     return (
 
-        <div>
+        <div className='dropdownComments'>
 
             Sort:
 
-            <select className='select'
+            <select className='selectComments'
                     name='sortSelect'
                     id='orderSelect'
                     onChange={handleSortClick}
@@ -42,7 +42,7 @@ const Dropdown = (props) => {
 
             Order:
 
-            <select className='select'
+            <select className='selectComments'
                     name='orderSelect'
                     id='orderSelect'
                     onChange={handleOrderClick}
