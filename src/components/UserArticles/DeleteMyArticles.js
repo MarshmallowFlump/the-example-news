@@ -46,19 +46,19 @@ const DeleteMyArticles = (props) => {
 
                 <div className='areYouSureArticle'>
 
-                    <h2>
+                    <h2 areYouSureArticleText>
 
                         Are you sure you want to delete this article?
 
                     </h2>
 
-                    <button className="areYouSureButtonArticle" onClick={handleConfirmClick}>
+                    <button className="confirmArticleDeleteButton" onClick={handleConfirmClick}>
                         
                         Confirm
 
                     </button>
 
-                    <button className="cancelDeleteButtonArticle" onClick={handleCancelClick}>
+                    <button className="cancelDeleteArticleButton" onClick={handleCancelClick}>
 
                         Cancel 
 
