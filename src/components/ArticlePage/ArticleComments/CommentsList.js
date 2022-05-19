@@ -1,6 +1,7 @@
 import React from 'react';
 import VoteOnComments from './VoteOnComments';
 import DeleteComment from './DeleteComment';
+import Date from '../../reuseable/Date';
 
 const CommentsList = (props) => {
 
@@ -15,26 +16,31 @@ const CommentsList = (props) => {
                         
                         <li key={comment.comment_id} className='commentsListItems'>
 
-                        <h2 className='commentUsername'>
-                            {comment.author}
+                            <h2 className='commentUsername'>
+
+                                {comment.author}
+
                             </h2>
-                    
-                        <h2 className='commentDate'> 
-                            {comment.created_at}  
+
+                            <h2 className='commentDate'>
+
+                                <Date date={comment.created_at} />
+                
                             </h2>
                 
-                        <p className='commentBody'>
-                            {comment.body}
+                            <p className='commentBody'>
+
+                                {comment.body}
+
                             </p>
                         
-                        <VoteOnComments comment_id={comment.comment_id} votes={comment.votes} />
+                            <VoteOnComments comment_id={comment.comment_id} votes={comment.votes} />
                         
-                        {username === comment.author && (
+                                {username === comment.author && (
                         
-                        <DeleteComment comment_id={comment.comment_id}/>
-
-                        )}
-                        
+                                    <DeleteComment comment_id={comment.comment_id}/>
+                                    
+                            )}
                         </li>
                     )
                 })}  
