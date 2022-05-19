@@ -60,7 +60,7 @@ const PostNewCommentCard = (props) => {
 
                     <form className='commentForm' onSubmit={handleCommentSubmit}>
 
-                        <input onChange={handleTyping} type='text' ref={commentRef} placeholder='Write your comment here...' required
+                        <input className="input" onChange={handleTyping} type='text' ref={commentRef} placeholder='Write your comment here...' required
                         />
 
                             <button className='submitComment' type='submit'>
