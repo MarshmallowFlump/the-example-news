@@ -124,6 +124,24 @@
     margin: 3px;
 }
 
+.confirmButtonArticlePage {
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: rgb(36, 90, 190);
+    font-weight: bold;
+    padding: 5px;
+    margin: 3px;
+}
+
+.cancelDeleteButtonArticlePage {
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: gray;
+    font-weight: bold;
+    padding: 5px;
+    margin: 3px
+}
+
 .voting {
     grid-area: voting;
 }
