@@ -29,11 +29,11 @@ const ArticlePage = (props) => {
 
             <Home/>
 
-            <ArticleBody article={article}/>
+            <ArticleBody article={article} date={article.created_at} />
 
             <InteractiveArticleCard article={article} username={username}/>
 
-            <CommentCard comment_count={article.comment_count} />
+            <CommentCard comment_count={article.comment_count} username={username} />
             
         </div>
     );
