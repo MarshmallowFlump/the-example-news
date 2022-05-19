@@ -44,7 +44,7 @@ const PostNewArticle = () => {
 
     return (
 
-        <div>
+        <div className='postNewArticle'>
 
             <Home />
             
@@ -52,7 +52,7 @@ const PostNewArticle = () => {
 
                 <div className='postNewFormView'>
 
-                <h1 className='title'>
+                <h1 className='newArticleTitle'>
 
                 Post New Article
 
@@ -60,24 +60,24 @@ const PostNewArticle = () => {
 
                 <form className='postNewArticleForm' onSubmit={handleSubmit}>
 
-                <label>
+                <label className='titleLabel'>
 
                     Title:
 
-                    <input type="text" value={this} onChange={handleTitleChange} />
+                    <input className='inputTitleBox' type="text" required value={this} onChange={handleTitleChange} />
 
                 </label>
 
-                <label>
+                <label className='bodyLabel'>
 
                     Body: 
 
-                    <input type="text" value={this} onChange={handleBodyChange} />
+                    <input className='inputBodyBox' type="text" required value={this} onChange={handleBodyChange} />
 
                 </label>
 
-                <input type="submit" value="Submit" />
-
+                <input className='submitArticleButton' type="submit" value="Submit" />
+                
             </form>
 
             </div>
@@ -86,17 +86,21 @@ const PostNewArticle = () => {
 
             {view === 'submitted-view' && (
 
-                <div className='submittedView'>
+                <div className='submittedArticleView'>
                     
-                    <h1>
+                    <h1 className='articleSubmittedText'>
 
-                        Your article has been submitted. To view your article, click here:
+                        Your article has been submitted.
+
+                        <div className='viewArticleButtonSection'>
 
                         <button className='viewArticleButton' onClick={handleClick}>
                             
                             View Article
                             
                         </button>
+
+                        </div>
 
                     </h1>
 
