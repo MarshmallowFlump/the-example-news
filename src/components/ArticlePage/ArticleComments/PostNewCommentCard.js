@@ -45,7 +45,7 @@ const PostNewCommentCard = (props) => {
 
                <div className='initialView'>
 
-                    <button className='postCommentButton' onClick={handleWriteCommentClick}>
+                    <button className='postCommentButton' required onClick={handleWriteCommentClick}>
 
                         Leave a comment...
 
