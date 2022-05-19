@@ -8,7 +8,7 @@ const InteractiveArticleCard = (props) => {
 
         return (
 
-        <div>
+        <div className='interactiveCard'>
 
             <VoteOnArticle article={article}/>
 
