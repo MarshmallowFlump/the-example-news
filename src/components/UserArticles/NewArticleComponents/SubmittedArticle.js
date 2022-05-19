@@ -7,7 +7,7 @@ const SubmittedArticle = (props) => {
 
     return (
 
-        <div>
+        <div className='submittedArticleView'>
 
             <ArticleBody article={article}/>
 
