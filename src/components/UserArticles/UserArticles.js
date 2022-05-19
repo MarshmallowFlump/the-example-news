@@ -30,11 +30,13 @@ const UserArticles = (props) => {
 
     return (
         
-        <div>
+        <main className='userArticlesPage'>
 
             <Home />
 
-            <h1>
+            <div className='userArticlesSection'>
+
+            <h1 className='userArticlesHeader'>
                 
                 Articles by User: {user_id}
             
@@ -42,7 +44,9 @@ const UserArticles = (props) => {
 
             <UserArticlesList myArticles={myArticles} setMyArticles={setMyArticles} loggedInUser={loggedInUser}/>
                      
-        </div>
+            </div>
+
+        </main>
     );
 };
 
