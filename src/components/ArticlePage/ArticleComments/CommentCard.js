@@ -9,6 +9,8 @@ const CommentCard = (props) => {
 
     const { comment_count } = props;
 
+    const { username } = props;
+
     const { article_id } = useParams();
 
     const [ comments, setComments ] = useState([]);
@@ -29,7 +31,7 @@ const CommentCard = (props) => {
         <div className='commentCard'>
             <h1>Comments ({comment_count})</h1>
             <Dropdown setSort={setSort}  setOrder={setOrder}/>
-            <CommentsList  comments={comments}/>
+            <CommentsList  comments={comments} username={username} />
         </div>
     );
 };
