@@ -12,7 +12,7 @@ const VoteOnComments = (props) => {
 
     useEffect(() => {
         setCommentVotes(votes);
-    }, []);
+    }, [votes]);
 
     const handleUpVoteClick = () => {
         if (upVoted === false) {
@@ -71,13 +71,13 @@ const VoteOnComments = (props) => {
 
     return (
         <div className='voteOnComment'>
+            
             <button className='commentUpvote' onClick={handleUpVoteClick}>
                 👍
             </button>
 
-            <h2 className='commentCount'>
                 {commentVotes}
-            </h2>
+                
             <button className='commentDownvote' onClick={handleDownVoteClick}>
                 👎
             </button>
