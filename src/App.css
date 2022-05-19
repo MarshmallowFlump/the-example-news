@@ -281,3 +281,79 @@
     font-size: medium;
     font-weight: bold;
 }
+
+.userArticlesSection {
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 30px;
+    margin: 10px;
+    background-color: navy;
+    color: white;
+}
+
+.userArticlesList {
+    display: grid;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.userArticlesListItems {
+    display: grid;
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 30px;
+    margin: 10px;
+    background-color: black;
+}
+
+.userArticlesTitle {
+    display: block;
+    padding: 5px;
+    color: white;
+    font-size: large;
+}
+
+.userArticlesDate {
+    background-color: cornflowerblue;
+    margin: 0;
+    padding: 5px;
+    color: black;
+}
+
+.userArticlesComments {
+    background-color: rgb(36, 90, 190);
+    margin: 0;
+    padding: 5px;
+}
+
+.deleteArticleButton {
+    background-color: white;
+    border-width: 5px;
+    color: black;
+    margin: 5px;
+}
+
+.areYouSureArticle {
+    font-size: small;
+}
+
+.confirmArticleDeleteButton {
+    margin: 10px;
+    background-color: white;
+    border-width: 5px;
+    border-color: cornflowerblue;
+    color: black;
+    border-radius: 10px;
+}
+
+.cancelDeleteArticleButton {
+    margin: 10px;
+    background-color: white;
+    border-width: 5px;
+    border-color: white;
+    color: black;
+    border-radius: 10px;
+}
