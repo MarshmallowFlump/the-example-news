@@ -6,20 +6,20 @@ const ArticleBody = (props) => {
   
     return (
 
-        <div className='articleBody'>
-            <h1 className='articleTitle'>
+        <div className='articlePageBody'>
+            <h1 className='articlePageTitle'>
                {article.title}
             </h1>
 
-            <h1 className='articleUsername'>
+            <h1 className='articlePageUsername'>
                 {article.author}
             </h1>
 
-            <h1 className='articleDate'>
+            <h1 className='articlePageDate'>
                 {article.created_at}
             </h1>
 
-            <p className='articleBodyText'>
+            <p className='articlePageBodyText'>
                 {article.body}
             </p>
         </div>
