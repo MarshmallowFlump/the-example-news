@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getArticles } from '../../utils/api';
 import Home from '../reuseable/Home';
 import UserArticlesList from './UserArticlesList';
+import LoadingSpin from '../reuseable/LoadingSpin';
 
 const UserArticles = (props) => {
 
@@ -18,6 +19,8 @@ const UserArticles = (props) => {
 
     const [ topic, setTopic ] = useState(null);
 
+    const [ loading, setLoading ] = useState(true);
+
     useEffect(() => {
         getArticles(topic, sort, order)
         .then((retrievedArticles) => {
@@ -25,10 +28,11 @@ const UserArticles = (props) => {
                 return article.author === user_id;
             });
             setMyArticles(myRetrievedArticles);
+            setLoading(false);
         });
     }, [topic, sort, order]);
 
-    return (
+    return loading ? (<LoadingSpin />) : (
         
         <main className='userArticlesPage'>
 
