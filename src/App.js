@@ -8,10 +8,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { getUser } from './utils/api'
 import PostNewArticle from './components/UserArticles/NewArticleComponents/PostNewArticle';
+import LoadingSpin from './components/reuseable/LoadingSpin';
 
 function App() {
   
   const user = 'jessjelly';
+
+  const [ loading, setLoading ] = useState(true);
 
   const [ profile, setProfile ] = useState({});
 
@@ -19,10 +22,11 @@ function App() {
     getUser(user)
     .then((res) => {
         setProfile(res.user);
+        setLoading(false);
     })
 }, [user]);
 
-  return (
+return loading ? (<LoadingSpin />) : (
     <BrowserRouter>
 
       <div className="App">
