@@ -27,7 +27,7 @@ function App() {
 
       <div className="App">
 
-        <Header name={profile.username}/>
+        <Header name={user}/>
 
           <div className='content'>
 
