@@ -9,7 +9,7 @@ import React, { useState, useEffect } from 'react';
 import { getUser } from './utils/api'
 import PostNewArticle from './components/UserArticles/NewArticleComponents/PostNewArticle';
 import LoadingSpin from './components/reuseable/LoadingSpin';
-
+import Error404 from './components/Error404';
 function App() {
   
   const user = 'jessjelly';
@@ -48,7 +48,9 @@ return loading ? (<LoadingSpin />) : (
                 <Route path="/users/:user_id/articles" element={<UserArticles profile={profile} /> } />
 
                 <Route path="/users/:user_id/post-new-article" element={<PostNewArticle /> } />
-
+                
+                <Route path='*' element={<Error404 />} />
+              
               </Routes>  
            
           </div>
