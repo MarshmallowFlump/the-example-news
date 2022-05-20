@@ -3,8 +3,11 @@ import { useEffect } from 'react/cjs/react.development';
 import { getArticles } from '../../utils/api';
 import ArticlesList from './ArticlesList';
 import ArticlesNav from './ArticlesNav';
+import LoadingSpin from '../reuseable/LoadingSpin';
 
 const ArticlesPage = (props) => {
+
+    const [ loading, setLoading ] = useState(true);
 
     const user = props.profile.username;
 
@@ -22,10 +25,12 @@ const ArticlesPage = (props) => {
         getArticles(topic, sort, order)
             .then((retrievedArticles) => {
                 setArticles(retrievedArticles);
+                setLoading(false);
             });
     }, [topic, sort, order]);
     
-    return (
+
+    return loading ? (<LoadingSpin />) : (
 
         <div className='articlesPage'>
 
