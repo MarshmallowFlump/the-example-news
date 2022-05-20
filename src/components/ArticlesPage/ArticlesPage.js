@@ -21,7 +21,7 @@ const ArticlesPage = (props) => {
 
     const [ topic, setTopic ] = useState(null);
     
-    useEffect(() => {
+    React.useEffect(() => {
         getArticles(topic, sort, order)
             .then((retrievedArticles) => {
                 setArticles(retrievedArticles);
