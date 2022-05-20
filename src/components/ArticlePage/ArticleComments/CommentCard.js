@@ -4,6 +4,7 @@ import { useState } from 'react/cjs/react.development';
 import { getArticleComments } from '../../../utils/api';
 import Dropdown from './Dropdown';
 import CommentsList from './CommentsList';
+import LoadingSpin from '../../reuseable/LoadingSpin';
 
 const CommentCard = (props) => {
 
@@ -18,16 +19,19 @@ const CommentCard = (props) => {
     const [ order, setOrder ] = useState('desc');
 
     const [ sort, setSort ] = useState(null);
+    
+    const [ loading, setLoading ] = useState(true);
 
     useEffect(() => {
         getArticleComments(article_id, sort, order)
         .then((res) => {
             setComments(res);
+            setLoading(false);
         });
     }, [comments, article_id, sort, order]);
 
   
-    return (
+    return loading ? (<LoadingSpin />) : (
         <div className='commentCard'>
             <h1>Comments ({comment_count})</h1>
             <Dropdown setSort={setSort}  setOrder={setOrder}/>
