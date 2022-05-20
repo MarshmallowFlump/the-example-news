@@ -6,7 +6,7 @@ import Home from '../reuseable/Home';
 import ArticleBody from './ArticleBody';
 import CommentCard from './ArticleComments/CommentCard';
 import InteractiveArticleCard from './InteractiveArticleCard';
-
+import LoadingSpin from '../reuseable/LoadingSpin';
 
 const ArticlePage = (props) => {
 
@@ -16,14 +16,17 @@ const ArticlePage = (props) => {
 
     const [ article, setArticle ] = useState({});
 
+    const [ loading, setLoading ] = useState(true);
+
     useEffect(() => {
         getArticleByID(article_id)
         .then((res) => {
             setArticle(res);
+            setLoading(false);
         });
     }, [article_id]);
 
-    return (
+    return loading ? (<LoadingSpin />) : (
 
         <div className='articlePage'>
 
