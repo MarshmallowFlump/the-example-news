@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getUser } from '../../utils/api';
 import Home from '../reuseable/Home';
+import LoadingSpin from '../reuseable/LoadingSpin';
 
 const UserProfiles = () => {
 
@@ -9,14 +10,17 @@ const UserProfiles = () => {
 
     const [ profile, setProfile ] = useState([]);
 
+    const [ loading, setLoading ] = useState(true);
+
     useEffect(() => {
         getUser(user_id)
         .then(({ user }) => {
             setProfile(user);
+            setLoading(false);
         });
     }, [user_id])
 
-    return (
+    return loading ? (<LoadingSpin />) : (
         <div className='profilePage'>
              
             <Home />
