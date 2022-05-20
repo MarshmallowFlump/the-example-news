@@ -21,7 +21,7 @@ const CommentCard = (props) => {
     
     const [ loading, setLoading ] = React.useState(true);
 
-    useEffect(() => {
+    React.useEffect(() => {
         getArticleComments(article_id, sort, order)
         .then((res) => {
             setComments(res);
