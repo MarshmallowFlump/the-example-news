@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
 import { getArticleByID } from '../../utils/api';
 import Home from '../reuseable/Home';
 import ArticleBody from './ArticleBody';
@@ -14,9 +13,9 @@ const ArticlePage = (props) => {
 
     const { article_id } = useParams();
 
-    const [ article, setArticle ] = useState({});
+    const [ article, setArticle ] = React.useState({});
 
-    const [ loading, setLoading ] = useState(true);
+    const [ loading, setLoading ] = React.useState(true);
 
     useEffect(() => {
         getArticleByID(article_id)
