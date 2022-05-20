@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { deleteComment } from "../../../utils/api";
 
 const DeleteComment = (props) => {
 
     const { comment_id } = props;
 
-    const [ view, setView ] = useState('delete-button-view');
+    const [ view, setView ] = React.useState('delete-button-view');
 
-    const [ err, setErr ] = useState(null);
+    const [ err, setErr ] = React.useState(null);
 
     const handleDeleteClick = (input) => {
         setView('are-you-sure');

@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { patchArticleCommentByID } from '../../../utils/api';
 
 const VoteOnComments = (props) => {
 
     const { votes, comment_id } = props;
     
-    const [ commentVotes, setCommentVotes ] = useState(0);
-    const [ err, setErr ] = useState(null);
-    const [ upVoted, setUpVoted ] = useState(false);
-    const [ downVoted, setDownVoted ] = useState(false);
+    const [ commentVotes, setCommentVotes ] = React.useState(0);
+    const [ err, setErr ] = React.useState(null);
+    const [ upVoted, setUpVoted ] = React.useState(false);
+    const [ downVoted, setDownVoted ] = React.useState(false);
 
     useEffect(() => {
         setCommentVotes(votes);

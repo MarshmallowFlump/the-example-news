@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
 import { getArticleComments } from '../../../utils/api';
 import Dropdown from './Dropdown';
 import CommentsList from './CommentsList';
@@ -14,13 +13,13 @@ const CommentCard = (props) => {
 
     const { article_id } = useParams();
 
-    const [ comments, setComments ] = useState([]);
+    const [ comments, setComments ] = React.useState([]);
 
-    const [ order, setOrder ] = useState('desc');
+    const [ order, setOrder ] = React.useState('desc');
 
-    const [ sort, setSort ] = useState(null);
+    const [ sort, setSort ] = React.useState(null);
     
-    const [ loading, setLoading ] = useState(true);
+    const [ loading, setLoading ] = React.useState(true);
 
     useEffect(() => {
         getArticleComments(article_id, sort, order)

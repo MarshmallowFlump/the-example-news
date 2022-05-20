@@ -1,4 +1,4 @@
-import React, {useState, useRef } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { postNewComment } from '../../../utils/api';
 
@@ -8,13 +8,13 @@ const PostNewCommentCard = (props) => {
 
     const { article_id } = useParams();
 
-    const commentRef = useRef();
+    const commentRef = React.useRef();
  
-    const [ view, setView ] = useState('initial-view');
+    const [ view, setView ] = React.useState('initial-view');
 
-    const [ err, setErr] = useState(null);
+    const [ err, setErr] = React.useState(null);
 
-    const [ comment, setComment ] = useState('');
+    const [ comment, setComment ] = React.useState('');
     
     const handleWriteCommentClick = (input) => {
         setView('write-comment-view')
