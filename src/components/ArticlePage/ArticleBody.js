@@ -1,4 +1,5 @@
 import React from 'react';
+import Date from '../reuseable/Date';
 
 const ArticleBody = (props) => {
 
@@ -16,7 +17,7 @@ const ArticleBody = (props) => {
             </h1>
 
             <h1 className='articlePageDate'>
-                {article.created_at}
+                <Date date={article.created_at} />
             </h1>
 
             <p className='articlePageBodyText'>
